@@ -1,0 +1,203 @@
+@import "./normalize.scss";
+@import "./container";
+
+$primary-color: #00c9e0;
+$secondary-color: #41ead4;
+$light-blue: #09f4f4;
+$white-color: #ffffff;
+$black-color: #011627;
+$dark-blue-color: rgba(0, 201, 224, 0.2);
+
+@font-face {
+  font-family: "Larsseit";
+  src: url("~@/assets/fonts/Larsseit.eot");
+  src: url("~@/assets/fonts/Larsseit.eot?#iefix") format("embedded-opentype"),
+    url("~@//assets/fonts/Larsseit.woff2") format("woff2"),
+    url("~@/assets/fonts/Larsseit.woff") format("woff"),
+    url("~@/assets/fonts/Larsseit.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noe_Display";
+  src: url("~@/assets/fonts/NoeDisplay-Bold.eot");
+  src: url("~@/assets/fonts/NoeDisplay-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("~@/assets/fonts/NoeDisplay-Bold.woff2") format("woff2"),
+    url("~@/assets/fonts/NoeDisplay-Bold.woff") format("woff"),
+    url("~@/assets/fonts/NoeDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Larsseit";
+  color: $white-color;
+  background-color: $black-color;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.d-inline {
+  display: inline;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
+}
+.align-center {
+  align-items: center;
+}
+
+.d-block {
+  display: block;
+}
+img {
+  height: auto;
+  width: 100%;
+}
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.height-100 {
+  height: 100vh;
+}
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  padding: 15px 35px;
+  font-family: Larsseit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 11px;
+  background: $primary-color;
+  border-radius: 48px;
+  -moz-border-radius: 48px;
+  /*gecko - mozilla*/
+  -webkit-border-radius: 48px;
+  /* Button Shadow */
+  box-shadow: 5px 15px 40px $dark-blue-color;
+  /*new webkit - Chrome and Safari*/
+  -moz-box-shadow: 5px 15px 40px $dark-blue-color;
+  /*gecko - mozilla*/
+  -webkit-box-shadow: 5px 15px 40px $dark-blue-color;
+  /*new webkit - Chrome and Safari*/
+  background: $primary-color;
+  color: #fff;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &::after {
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 100%;
+  }
+}
+button {
+  position: relative;
+  cursor: pointer;
+  padding: 25px 60px;
+  font-family: Larsseit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 11px;
+  background: $primary-color;
+  border-radius: 48px;
+  -moz-border-radius: 48px;
+  /*gecko - mozilla*/
+  -webkit-border-radius: 48px;
+  /* Button Shadow */
+  box-shadow: 5px 15px 40px $dark-blue-color;
+  /*new webkit - Chrome and Safari*/
+  -moz-box-shadow: 5px 15px 40px $dark-blue-color;
+  /*gecko - mozilla*/
+  -webkit-box-shadow: 5px 15px 40px $dark-blue-color;
+  /*new webkit - Chrome and Safari*/
+  background: $primary-color;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+  &:focus {
+    outline: 0;
+}
+}
+
+button::after {
+  content: "";
+  background: #011627;
+  position: absolute;
+  z-index: -1;
+  padding: 0.85em 0.75em;
+  display: block;
+}
+button[class^="slide"]::after {
+  transition: all 0.35s;
+}
+button[class^="slide"]:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s;
+}
+button.slide_from_left::after {
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+}
+
+.bg-trip {
+  background-image: url("~@/assets/img/main.png"),linear-gradient(180deg, rgba(1, 22, 39, 0) 0%, #011627 76.64%, #011627 100%);;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: fit-content;
+  height: 120vh;
+  position: relative;
+}
+
+@media screen and (min-width: 992px) {
+  .btn {
+    font-size: 16px;
+    line-height: 21px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+    }
+  }
+}

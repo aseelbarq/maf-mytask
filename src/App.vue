@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="bg-trip">
+      <HeaderComponent/>
+      <TripsComponent/>
+      <SocialMediaComponent/>
+      <TabsComponent  :tabItem="tabs" />
+      <TabsContentComponent/>
+     
+     
+      </div>
+
+ 
+ 
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Data from './Data.json';
+ import HeaderComponent from "./components/HeaderComponent";
+import TripsComponent from "./components/TripsComponent";
+import SocialMediaComponent from "./components/SocialMediaComponent";
+import TabsComponent from "./components/TabsComponent";
+import TabsContentComponent from "./components/TabsContentComponent";
+
+
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "App",
+  data() {
+     return {
+        tabs: Data
+    };
+  },
+  components: {HeaderComponent,TripsComponent,SocialMediaComponent ,TabsComponent,TabsContentComponent},
+  methods: {
+   
+  },
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+};
+</script>
+<style lang="scss">
+@import "./assets/scss/common";
 </style>
+
+ 

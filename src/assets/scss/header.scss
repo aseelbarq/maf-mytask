@@ -1,0 +1,125 @@
+@import "./common";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  .logo {
+    width: 60px;
+  }
+
+  .search-icon {
+    width: 20px;
+    margin-right: 20px;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.96);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+  li {
+    text-transform: uppercase;
+    transform: translateY(20px);
+    opacity: 1;
+    animation: 2s slideUp ease forwards 0.5s;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 0px;
+      right: 0;
+      bottom: 10px;
+      background: #00c9e0;
+      transition: all 0.5s ease;
+    }
+
+    &:hover:before {
+      width: 200px;
+      margin: auto;
+    }
+  }
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    &:hover {
+      color: #00c9e0;
+    }
+  }
+
+  .closebtn {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+}
+
+// responsive
+
+@media screen and (min-width: 1024px) {
+  .upper-section {
+    .header {
+      .search-icon {
+        width: 18px;
+        margin-right: 40px;
+      }
+    }
+
+    .trips-section-description {
+      top: 10%;
+      min-height: calc(100vh - 0px);
+      width: 100%;
+      .title {
+        font-size: 120px;
+        line-height: 153px;
+        margin-top: 120px;
+      }
+
+      .sub-title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 15px;
+      }
+
+      p {
+        width: 643px;
+        margin: auto;
+        font-size: 17px;
+        line-height: 25px;
+        margin-top: 50px;
+      }
+    }
+
+    .upper-section-container {
+      .social-icons {
+        bottom: 192px;
+        right: 0;
+      }
+
+      .scroll-container {
+        bottom: 262px;
+      }
+    }
+  }
+}
