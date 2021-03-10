@@ -1,7 +1,7 @@
 <template>
 <div>
 <section class="height-100">
-      <div class="d-flex flex-column justify-center section-trips">
+      <div class="d-flex flex-column  section-trips">
         <h1 class="title">Night Trips</h1>
         <h2 class="sub-title">WE GOT TRIPS FOR THE TRIPPSTER IN YOU</h2>
         <p>

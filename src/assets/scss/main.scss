@@ -362,10 +362,11 @@
     font-weight: normal;
     font-size: 17px;
     margin-top: 25px;
-    line-height: 1;
-    text-align: justify;
+    line-height: 25px;
+    margin: 20px auto;
     color: $white-color;
-    width: 100%;
+    width: 50%;
+    text-align: justify;
   }
 }
 .social-media-section {
@@ -544,7 +545,7 @@
     }
   }
   .sub-title {
-    width: 100%;
+    width: auto;
     font-family: Larsseit;
     font-size: 16px;
     line-height: 1.6;
@@ -730,9 +731,9 @@
     }
 
     .sub-title {
-      width: 100%;
+      width: auto;
       font-size: 16px;
-      line-height: 150%;
+      line-height: unset;
       margin-top: 0;
       text-align: justify;
       margin-left: 30px;
@@ -779,12 +780,24 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .pick-trip-section .title::after ,.pick-trip-section .title::before{
+    display: none;
+  }
+  .header {
+    a {
+      align-items: center;
+      display: flex;
+    }
+  }
+  .bg-trip{
+    height:80vh !important;
+  }
   .scroll {
-    bottom: 95px;
+    bottom:25px;
     left: -55px;
   }
   .social-media-section .social-media {
-    bottom: 25px;
+    bottom: -45px;
     right: 20px;
   }
   .tabs-content .tabs-Info .text-tab .title {
@@ -857,7 +870,7 @@
     width: 90%;
     margin: auto;
     .title {
-      margin: 60px;
+      margin: 60px 5px;
       font-size: 40px;
       line-height: 110%;
       text-align: left;
@@ -865,9 +878,9 @@
     }
 
     .sub-title {
-      width: 100%;
+      width: 70%;
       font-size: 16px;
-      line-height: 150%;
+      line-height:unset;
       margin-top: 0;
       text-align: left;
     }
@@ -886,8 +899,8 @@
   }
 
   .section-trips {
-    top: 10%;
-    min-height: calc(100vh - 0px);
+    top: 5px;
+    min-height: 65vh;
     width: 100%;
     .title {
       font-size: 40px;
