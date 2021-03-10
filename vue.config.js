@@ -7,5 +7,8 @@ module.exports = {
         background_color: "#42b983"
       }
     },
-    publicPath: '/maf/'
+    publicPath:
+	process.env.NODE_ENV === 'production'
+	? '/maf-mytask/'
+	:'/'
   };
